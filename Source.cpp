@@ -1,58 +1,34 @@
 #include <iostream>
+#include <Windows.h>
 
-struct bankaccount
-{
-
+struct bankaccount {
+    std::string name;
+    int accountnum;
+    double balanc;
 }; 
 
 int main(int argc, char** atgv) {
     setlocale(LC_ALL, "Russian");
-    int m;
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    std::string b; int c; double d; double e;
 
-    /*do {
+    std::cout << "¬ведите номер счета: ";
+    std::cin >> c;
+    std::cout << "¬ведите им€ владельца: ";
+    std::cin >> b;
+    std::cout << "¬ведите баланс: ";
+    std::cin >> d;
+    std::cout << "¬ведите новый баланс: ";
+    std::cin >> e;
 
-        std::cout << "введите номер мес€ца: ";
-        std::cin >> m;
-        Months m1 = static_cast<Months>(m);
+    bankaccount a = {b,c,d};
+    a.name = b;
+    a.accountnum = c;
+    a.balanc = d;
 
-        switch (m1) {
-        case Months::Jan:
-            std::cout << "январь" << std::endl;
-            break;
-        case Months::Feb:
-            std::cout << "‘евраль" << std::endl;
-            break;
-        case Months::Marth:
-            std::cout << "ћарт" << std::endl;
-            break;
-        case Months::April:
-            std::cout << "јпрель" << std::endl;
-            break;
-        case Months::May:
-            std::cout << "ћай" << std::endl;
-            break;
-        case Months::June:
-            std::cout << "»юнь" << std::endl;
-            break;
-        case Months::Jule:
-            std::cout << "»юль" << std::endl;
-            break;
-        case Months::Aug:
-            std::cout << "јвгуст" << std::endl;
-            break;
-        case Months::Sep:
-            std::cout << "—ент€брь" << std::endl;
-            break;
-        case Months::Oct:
-            std::cout << "ќкт€брь" << std::endl;
-            break;
-        case Months::Nov:
-            std::cout << "Ќо€брь" << std::endl;
-            break;
-        case Months::Dec:
-            std::cout << "ƒекабрь" << std::endl;
-            break;
-        }
-    } while (m > 0);*/
+    if (e != d) a.balanc = e;
+   
+    std::cout << "¬аш счет: " << (a.name) << ", " << a.accountnum << ", " << a.balanc << std::endl;
 
 }
